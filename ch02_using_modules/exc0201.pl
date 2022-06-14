@@ -7,5 +7,5 @@ use Cwd;
 
 my $curdir = getcwd;
 my @files_names = glob "*";
-print " " x 4, File::Spec->catfile($curdir, $_), "\n" foreach (@files_names);
+print map {" " x 4 . File::Spec->catfile($curdir, $_) . "\n"} @files_names;
 __END__
