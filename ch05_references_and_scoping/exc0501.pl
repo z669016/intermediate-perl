@@ -2,7 +2,9 @@
 use strict;
 use warnings FATAL => 'all';
 
-my %passenger_1 = {
+use Data::Dumper;
+
+my $passenger_1 = {
     name       => 'Ginger',
     age        => 22,
     occupation => 'Movie Star',
@@ -10,11 +12,12 @@ my %passenger_1 = {
     hat        => undef,
 };
 
-my %passenger_2 = {
+my $passenger_2 = {
   name          => 'Mary-Ann',
   age           => 19,
   hat           => 'bonnet',
   favorite_food => 'corn',
 };
 
-my @passengers = (\%passenger_1, \%passenger_2);
+my @passengers = ([$passenger_1, $passenger_2]);
+print Data::Dumper->Dump(@passengers);
